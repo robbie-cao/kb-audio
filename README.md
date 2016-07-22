@@ -57,6 +57,12 @@ MAD has the following special features:
 
 > https://jan.newmarch.name/LinuxSound/Sampled/Architecture/
 
+### Android Audio Subsystem
+
+![Android Audio Subsystem](http://processors.wiki.ti.com/images/1/18/Audio_Stack.jpg)
+
+> http://processors.wiki.ti.com/index.php/TI-Android-GingerBread-2.3.4-DevKit-2.1_PortingGuides#Audio
+
 ### ALSA - Advanced Linux Sound Architecture
 
 Advanced Linux Sound Architecture (ALSA) is a software framework and part of the Linux kernel that provides an application programming interface (API) for sound card device drivers. Some of the goals of the ALSA project at its inception were automatic configuration of sound-card hardware and graceful handling of multiple sound devices in a system. ALSA is released under the GNU General Public License (GPL) and the GNU Lesser General Public License (LGPL).
@@ -479,3 +485,5 @@ In audio engineering, electronics, physics, and many other fields, the color of 
 
 ## Reference
 - https://jan.newmarch.name/LinuxSound/index.html
+- http://www.embeddedlinux.org.cn/essentiallinuxdevicedrivers/
+- http://processors.wiki.ti.com/index.php/TI-Android-GingerBread-2.3.4-DevKit-2.1_PortingGuides
