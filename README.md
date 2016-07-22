@@ -4,6 +4,103 @@
 
 ## Software
 
+### `arecord`
+
+Alias to `aplay -C`.
+
+`arecord` is a command-line soundfile recorder for the ALSA soundcard driver. 
+It supports several file formats and multiple soundcards with multiple devices. 
+If recording with interleaved mode samples the file is automatically split before the 2GB filesize.
+
+> http://linux.die.net/man/1/aplay
+
+### `aplay`
+
+`aplay` - command-line sound recorder and player for ALSA soundcard driver.
+
+```
+Usage: aplay [OPTION]... [FILE]...
+
+-h, --help              help
+    --version           print current version
+-l, --list-devices      list all soundcards and digital audio devices
+-L, --list-pcms         list device names
+-D, --device=NAME       select PCM by name
+-q, --quiet             quiet mode
+-t, --file-type TYPE    file type (voc, wav, raw or au)
+-c, --channels=#        channels
+-f, --format=FORMAT     sample format (case insensitive)
+-r, --rate=#            sample rate
+-d, --duration=#        interrupt after # seconds
+-M, --mmap              mmap stream
+-N, --nonblock          nonblocking mode
+-F, --period-time=#     distance between interrupts is # microseconds
+-B, --buffer-time=#     buffer duration is # microseconds
+    --period-size=#     distance between interrupts is # frames
+    --buffer-size=#     buffer duration is # frames
+-A, --avail-min=#       min available space for wakeup is # microseconds
+-R, --start-delay=#     delay for automatic PCM start is # microseconds 
+                        (relative to buffer size if <= 0)
+-T, --stop-delay=#      delay for automatic PCM stop is # microseconds from xrun
+-v, --verbose           show PCM structure and setup (accumulative)
+-V, --vumeter=TYPE      enable VU meter (TYPE: mono or stereo)
+-I, --separate-channels one file for each channel
+-i, --interactive       allow interactive operation from stdin
+-m, --chmap=ch1,ch2,..  Give the channel map to override or follow
+    --disable-resample  disable automatic rate resample
+    --disable-channels  disable automatic channel conversions
+    --disable-format    disable automatic format conversions
+    --disable-softvol   disable software volume control (softvol)
+    --test-position     test ring buffer position
+    --test-coef=#       test coefficient for ring buffer position (default 8)
+                        expression for validation is: coef * (buffer_size / 2)
+    --test-nowait       do not wait for ring buffer - eats whole CPU
+    --max-file-time=#   start another output file when the old file has recorded
+                        for this many seconds
+    --process-id-file   write the process ID here
+    --use-strftime      apply the strftime facility to the output file name
+    --dump-hw-params    dump hw_params of the device
+    --fatal-errors      treat all errors as fatal
+Recognized sample formats are: S8 U8 S16_LE S16_BE U16_LE U16_BE S24_LE S24_BE U24_LE U24_BE S32_LE S32_BE U32_LE U32_BE FLOAT_LE FLOAT_BE FLOAT64_LE FLOAT64_BE IEC958_SUBFRAME_LE IEC958_SUBFRAME_BE MU_LAW A_LAW IMA_ADPCM MPEG GSM SPECIAL S24_3LE S24_3BE U24_3LE U24_3BE S20_3LE S20_3BE U20_3LE U20_3BE S18_3LE S18_3BE U18_3LE U18_3BE G723_24 G723_24_1B G723_40 G723_40_1B DSD_U8 DSD_U16_LE
+Some of these may not be available on selected hardware
+The available format shortcuts are:
+-f cd (16 bit little endian, 44100, stereo)
+-f cdr (16 bit big endian, 44100, stereo)
+-f dat (16 bit little endian, 48000, stereo)
+```
+
+Exmaples:
+
+```
+aplay -c 1 -t raw -r 22050 -f mu_law foobar
+```
+will play the raw file "foobar" as a 22050-Hz, mono, 8-bit, Mu-Law .au file.
+
+```
+arecord -d 10 -f cd -t wav -D copy foobar.wav
+```
+will record foobar.wav as a 10-second, CD-quality wave file, using the PCM "copy" (which might be defined in the user's .asoundrc file as:
+
+```
+pcm.copy {
+  type plug
+  slave {
+    pcm hw
+  }
+  route_policy copy
+}
+```
+
+```
+arecord -t wav --max-file-time 30 mon.wav
+```
+record from the default audio source in monaural, 8,000 samples per second, 8 bits per sample. Start a new file every 30 seconds. File names are mon-nn.wav, where nn increases from 01. The file after mon-99.wav is mon-100.wav.
+
+```
+arecord -f cd -t wav --max-file-time 3600 --use-strftime %Y/%m/%d/listen-%H-%M-%v.wav
+```
+Record in stereo from the default audio source. Create a new file every hour. The files are placed in directories based on their start dates and have names which include their start times and file numbers.
+
 ## Awesome
 
 ### While Noise
