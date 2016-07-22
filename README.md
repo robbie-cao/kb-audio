@@ -194,6 +194,18 @@ records a stream of audio such as LP/cassette and splits in to multiple audio fi
 
 > http://linux.die.net/man/1/sox
 
+### `mpg123`
+
+`mpg123` - play audio MPEG 1.0/2.0/2.5 stream (layers 1, 2 and 3)
+
+```
+mpg123 [ options ] file ... | URL ... | -
+```
+
+`mpg123` reads one or more files (or standard input if ''-'' is specified) or URLs and plays them on the audio device (default) or outputs them to stdout. file/URL is assumed to be an MPEG audio bit stream.
+
+> http://linux.die.net/man/1/mpg123
+
 ## Awesome
 
 ### While Noise
