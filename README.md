@@ -101,6 +101,18 @@ arecord -f cd -t wav --max-file-time 3600 --use-strftime %Y/%m/%d/listen-%H-%M-%
 ```
 Record in stereo from the default audio source. Create a new file every hour. The files are placed in directories based on their start dates and have names which include their start times and file numbers.
 
+### `alsamixer`
+
+`alsamixer` - soundcard mixer for ALSA soundcard driver, with ncurses interface
+
+> http://linux.die.net/man/1/alsamixer
+
+### `amixer`
+
+`amixer` - command-line mixer for ALSA soundcard driver
+
+> http://linux.die.net/man/1/amixer
+
 ## Awesome
 
 ### While Noise
