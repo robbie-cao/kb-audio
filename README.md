@@ -111,7 +111,88 @@ Record in stereo from the default audio source. Create a new file every hour. Th
 
 `amixer` - command-line mixer for ALSA soundcard driver
 
+`amixer` allows command-line control of the mixer for the ALSA soundcard driver. amixer supports multiple soundcards.
+
+`amixer` with no arguments will display the current mixer settings for the default soundcard and device. This is a good way to see a list of the simple mixer controls you can use.
+
 > http://linux.die.net/man/1/amixer
+
+### `sox`
+
+SoX - Sound eXchange, the Swiss Army knife of audio manipulation
+
+```
+sox [global-options] [format-options] infile1
+    [[format-options] infile2] ... [format-options] outfile
+    [effect [effect-options]] ...
+
+play [global-options] [format-options] infile1
+    [[format-options] infile2] ... [format-options]
+    [effect [effect-options]] ...
+
+rec [global-options] [format-options] outfile
+    [effect [effect-options]] ...
+```
+
+SoX reads and writes audio files in most popular formats and can optionally apply effects to them; 
+it can combine multiple input sources, synthesise audio, and, on many systems, act as a general purpose 
+audio player or a multi-track audio recorder. It also has limited ability to split the input in to multiple output files.
+
+Almost all SoX functionality is available using just the `sox` command, however, to simplify playing and 
+recording audio, if SoX is invoked as `play` the output file is automatically set to be the default sound 
+device and if invoked as `rec` the default sound device is used as an input source. Additionally, the `soxi`(1) 
+command provides a convenient way to just query audio file header information.
+
+Examples:
+
+```
+sox recital.au recital.wav
+```
+translates an audio file in Sun AU format to a Microsoft WAV file, whilst
+```
+sox recital.au -r 12k -b 8 -c 1 recital.wav vol 0.7 dither
+```
+performs the same format translation, but also changes the audio sampling rate & sample size, down-mixes to mono, and applies the vol and dither effects.
+```
+sox -r 8k -u -b 8 -c 1 voice-memo.raw voice-memo.wav
+```
+converts 'raw' (a.k.a. 'headerless') audio to a self-descibing file format,
+```
+sox slow.aiff fixed.aiff speed 1.027
+```
+adjusts audio speed,
+```
+sox short.au long.au longer.au
+```
+concatenates two audio files, and
+```
+sox -m music.mp3 voice.wav mixed.flac
+```
+mixes together two audio files.
+```
+play "The Moonbeams/Greatest/*.ogg" bass +3
+```
+plays a collection of audio files whilst applying a bass boosting effect,
+```
+play -n -c1 synth sin %-12 sin %-9 sin %-5 sin %-2 fade q 0.1 1 0.1
+```
+plays a synthesised 'A minor seventh' chord with a pipe-organ sound,
+```
+rec -c 2 test.aiff trim 0 10
+```
+records 10 seconds of stereo audio, and
+```
+rec -M take1.aiff take1-dub.aiff
+```
+records a new track in a multi-track recording.
+```
+rec -r 44100 -2 -s -p silence 1 0.50 0.1% 1 10:00 0.1% | \
+     sox -p song.ogg silence 1 0.50 0.1% 1 2.0 0.1% : \
+     newfile : restart
+```
+records a stream of audio such as LP/cassette and splits in to multiple audio files at points with 2 seconds of silence. Also does not start recording until it detects audio is playing and stops after it sees 10 minutes of silence.
+
+> http://linux.die.net/man/1/sox
 
 ## Awesome
 
