@@ -2,6 +2,10 @@
 
 ## Principle
 
+![Sound Arch Simple Abstraction](http://www.alsa-project.org/main/index.php/File:Snd-driver-context.png)
+
+> http://www.alsa-project.org/main/index.php/Minivosc#Understanding_ALSA_driver_architecture
+
 ## Codec
 
 ## Encoder & Decoder
@@ -45,6 +49,12 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 >
 > http://www.alsa-project.org/~frank/alsa-sequencer/
 
+### ALSA Structure
+
+![Structure of ALSA](http://www.alsa-project.org/~tiwai/lk2k/archtect.gif)
+
+> http://www.alsa-project.org/~tiwai/lk2k/lk2k.html
+
 #### ALSA SoC Layer
 
 The overall project goal of the ALSA System on Chip (ASoC) layer is to provide better ALSA support for embedded system on chip procesors (e.g. pxa2xx, au1x00, iMX, etc) and portable audio codecs. Currently there is some support in the kernel for SoC audio, however it has some limitations.
@@ -64,6 +74,8 @@ To achieve all this, ASoC basically splits an embedded audio system into 3 compo
 > http://www.rpsys.net/openzaurus/patches/alsa/info.html
 >
 > http://www.alsa-project.org/main/index.php/ASoC
+
+![ASoC Sample AM/DM37x, OMAP35x](http://processors.wiki.ti.com/index.php/File:Asoc_architecture.png)
 
 ## Software
 
