@@ -222,6 +222,19 @@ mpg123 [ options ] file ... | URL ... | -
 
 > http://linux.die.net/man/1/mpg123
 
+### `madplay`
+
+`madplay` - decode and play MPEG audio stream(s)
+
+```
+madplay [options] file ...
+madplay [options] -o [type:]path file ...
+```
+
+`madplay` is a command-line MPEG audio decoder and player based on the MAD library (libmad).
+
+> http://manpages.ubuntu.com/manpages/precise/man1/madplay.1.html
+
 ## Awesome
 
 ### While Noise
