@@ -53,7 +53,7 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 >
 > http://www.alsa-project.org/~frank/alsa-sequencer/
 
-### ALSA Structure
+#### ALSA Structure
 
 ![Structure of ALSA](http://www.alsa-project.org/~tiwai/lk2k/archtect.gif)
 
@@ -80,6 +80,12 @@ To achieve all this, ASoC basically splits an embedded audio system into 3 compo
 > http://www.alsa-project.org/main/index.php/ASoC
 
 ![ASoC Sample AM/DM37x, OMAP35x](http://processors.wiki.ti.com/images/9/91/Asoc_architecture.png)
+
+### PulseAudio
+
+![PulseAudio and ALSA](http://i.stack.imgur.com/IJkHa.png)
+
+> http://askubuntu.com/questions/581128/what-is-the-relation-between-alsa-and-pulseaudio-sound-architecture
 
 ## Software
 
