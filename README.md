@@ -2,6 +2,22 @@
 
 ## Codec
 
+## Encoder & Decoder
+
+### MAD: MPEG Audio Decoder
+
+MAD is a high-quality MPEG audio decoder. It currently supports MPEG-1 and the MPEG-2 extension to lower sampling frequencies, as well as the de facto MPEG 2.5 format. All three audio layers — Layer I, Layer II, and Layer III (i.e. MP3) — are fully implemented.
+
+MAD does not yet support MPEG-2 multichannel audio (although it should be backward compatible with such streams) nor does it currently support AAC.
+
+MAD has the following special features:
+- 24-bit PCM output
+- 100% fixed-point (integer) computation
+- completely new implementation based on the ISO/IEC standards
+- available under the terms of the GNU General Public License (GPL)
+
+> http://www.underbit.com/products/mad/
+
 ## Software
 
 ### `arecord`
