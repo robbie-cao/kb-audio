@@ -328,6 +328,12 @@ madplay [options] -o [type:]path file ...
 
 > http://manpages.ubuntu.com/manpages/precise/man1/madplay.1.html
 
+### `fluidsynth`
+
+![fluidsynth](http://tedfelix.com/linux/linux-midi.png)
+
+> http://tedfelix.com/linux/linux-midi.html
+
 ## Awesome
 
 ### Noise Generator
@@ -487,3 +493,4 @@ In audio engineering, electronics, physics, and many other fields, the color of 
 - https://jan.newmarch.name/LinuxSound/index.html
 - http://www.embeddedlinux.org.cn/essentiallinuxdevicedrivers/
 - http://processors.wiki.ti.com/index.php/TI-Android-GingerBread-2.3.4-DevKit-2.1_PortingGuides
+- http://tedfelix.com/linux/linux-midi.html
