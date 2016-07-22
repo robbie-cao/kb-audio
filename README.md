@@ -20,6 +20,27 @@ MAD has the following special features:
 
 > http://www.underbit.com/products/mad/
 
+## Architecture
+
+### Linux Audio Architecture
+
+- ALSA
+- OSS
+- JACK
+- PulseAudio
+
+![Linux Audio Architecutre](http://thewelltemperedcomputer.com/Linux/Pic/DiagramAlsa.jpg)
+
+> http://thewelltemperedcomputer.com/Linux/AudioArchitecture.htm
+
+### ALSA - Advanced Linux Sound Architecture
+
+Advanced Linux Sound Architecture (ALSA) is a software framework and part of the Linux kernel that provides an application programming interface (API) for sound card device drivers. Some of the goals of the ALSA project at its inception were automatic configuration of sound-card hardware and graceful handling of multiple sound devices in a system. ALSA is released under the GNU General Public License (GPL) and the GNU Lesser General Public License (LGPL).
+
+![ALSA in Kernel](https://upload.wikimedia.org/wikipedia/commons/9/91/Linux_kernel_and_gaming_input-output_latency.svg)
+
+> https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture
+
 ## Software
 
 ### `arecord`
@@ -118,6 +139,8 @@ record from the default audio source in monaural, 8,000 samples per second, 8 bi
 arecord -f cd -t wav --max-file-time 3600 --use-strftime %Y/%m/%d/listen-%H-%M-%v.wav
 ```
 Record in stereo from the default audio source. Create a new file every hour. The files are placed in directories based on their start dates and have names which include their start times and file numbers.
+
+![aplay in linux](http://www.embeddedlinux.org.cn/essentiallinuxdevicedrivers/final/images/MjltNHJhaS9kNy8zY3JncDA4dHMvOTMxZTZhZzU1LjhpMWYvcGdoaWZjaXMwM2c-.jpg)
 
 ### `alsamixer`
 
