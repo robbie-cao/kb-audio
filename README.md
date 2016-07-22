@@ -37,6 +37,10 @@ MAD has the following special features:
 
 > http://thewelltemperedcomputer.com/Linux/AudioArchitecture.htm
 
+![Linux Sound Components](https://jan.newmarch.name/LinuxSound/Sampled/Architecture/layers.png)
+
+> https://jan.newmarch.name/LinuxSound/Sampled/Architecture/
+
 ### ALSA - Advanced Linux Sound Architecture
 
 Advanced Linux Sound Architecture (ALSA) is a software framework and part of the Linux kernel that provides an application programming interface (API) for sound card device drivers. Some of the goals of the ALSA project at its inception were automatic configuration of sound-card hardware and graceful handling of multiple sound devices in a system. ALSA is released under the GNU General Public License (GPL) and the GNU Lesser General Public License (LGPL).
@@ -452,4 +456,4 @@ In audio engineering, electronics, physics, and many other fields, the color of 
 > https://en.wikipedia.org/wiki/Colors_of_noise
 
 ## Reference
-
+- https://jan.newmarch.name/LinuxSound/index.html
