@@ -2,7 +2,7 @@
 
 ## Principle
 
-![Sound Arch Simple Abstraction](http://www.alsa-project.org/main/index.php/File:Snd-driver-context.png)
+![Sound Arch Simple Abstraction](http://www.alsa-project.org/main/images/2/22/Snd-driver-context.png)
 
 > http://www.alsa-project.org/main/index.php/Minivosc#Understanding_ALSA_driver_architecture
 
@@ -75,7 +75,7 @@ To achieve all this, ASoC basically splits an embedded audio system into 3 compo
 >
 > http://www.alsa-project.org/main/index.php/ASoC
 
-![ASoC Sample AM/DM37x, OMAP35x](http://processors.wiki.ti.com/index.php/File:Asoc_architecture.png)
+![ASoC Sample AM/DM37x, OMAP35x](http://processors.wiki.ti.com/images/9/91/Asoc_architecture.png)
 
 ## Software
 
