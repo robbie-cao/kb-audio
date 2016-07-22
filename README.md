@@ -39,7 +39,31 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 
 ![ALSA in Kernel](https://upload.wikimedia.org/wikipedia/commons/9/91/Linux_kernel_and_gaming_input-output_latency.svg)
 
+>http://www.alsa-project.org/main/index.php/Main_Page
+>
 > https://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture
+>
+> http://www.alsa-project.org/~frank/alsa-sequencer/
+
+#### ALSA SoC Layer
+
+The overall project goal of the ALSA System on Chip (ASoC) layer is to provide better ALSA support for embedded system on chip procesors (e.g. pxa2xx, au1x00, iMX, etc) and portable audio codecs. Currently there is some support in the kernel for SoC audio, however it has some limitations.
+
+The ASoC layer is designed to address these issues and provide the following features:
+- Codec independence. Allows reuse of codec drivers on other platforms and machines.
+- Easy I2S/PCM audio interface setup between codec and SoC. Each SoC interface and codec registers it's audio interface capabilities with the core and are subsequently matched and configured when the application hw params are known.
+- Dynamic Audio Power Management (DAPM). DAPM automatically sets the codec to it's minimum power state at all times. This includes powering up/down internal power blocks depending on the internal codec audio routing and any active streams.
+- Pop and click reduction. Pops and clicks can be reduced by powering the codec up/down in the correct sequence (including using digital mute). ASoC signals the codec when to change power states.
+- Machine specific controls: Allow machines to add controls to the sound card. e.g. volume control for speaker amp.
+
+To achieve all this, ASoC basically splits an embedded audio system into 3 components:
+- Codec driver: The codec driver is platform independent and contains audio controls, audio interface capabilities, codec dapm definition and codec IO functions.
+- Platform driver: The platform driver contains the audio dma engine and audio interface drivers (e.g. I2S, AC97, PCM) for that platform.
+- Machine driver: The machine driver handles any machine specific controls and audio events. i.e. turning on an amp at start of playback.
+
+> http://www.rpsys.net/openzaurus/patches/alsa/info.html
+>
+> http://www.alsa-project.org/main/index.php/ASoC
 
 ## Software
 
