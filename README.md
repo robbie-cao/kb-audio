@@ -1,5 +1,7 @@
 # Learning Audio
 
+## Principle
+
 ## Codec
 
 ## Encoder & Decoder
@@ -237,7 +239,7 @@ madplay [options] -o [type:]path file ...
 
 ## Awesome
 
-### While Noise
+### Noise Generator
 
 **Using SoX (Sound eXchange)**
 
@@ -374,6 +376,21 @@ amplitude and samplerate you like, optionally with a finite duration.
   ```
 
 > http://askubuntu.com/questions/789465/generate-white-noise-to-calm-a-baby
+
+## Misc
+
+### Color of Noise
+
+- White
+- Pink
+- Red (Brownian)
+- Grey
+
+![Color of Noise](https://upload.wikimedia.org/wikipedia/commons/6/6c/The_Colors_of_Noise.png)
+
+In audio engineering, electronics, physics, and many other fields, the color of a noise signal (a signal produced by a stochastic process) is generally understood to be some broad characteristic of its power spectrum. Different colors of noise have significantly different properties: for example, as audio signals they will sound different to human ears, and as images they will have a visibly different texture. Therefore, each application typically requires noise of a specific color. This sense of 'color' for noise signals is similar to the concept of timbre in music (which is also called "tone color"); however the latter is almost always used for sound, and may consider very detailed features of the spectrum.
+
+> https://en.wikipedia.org/wiki/Colors_of_noise
 
 ## Reference
 
