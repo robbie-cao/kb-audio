@@ -87,6 +87,39 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 
 > http://www.alsa-project.org/~tiwai/lk2k/lk2k.html
 
+#### ALSA Interface
+
+**Device Files in `/dev/snd/`
+
+  ```
+  $ ls -l /dev/snd
+  total 0
+  drwxr-xr-x  2 root root       60  7月 20 11:11 by-path
+  crw-rw----+ 1 root audio 116,  2  7月 20 11:11 controlC0
+  crw-rw----+ 1 root audio 116,  4  7月 21 18:05 pcmC0D0c
+  crw-rw----+ 1 root audio 116,  3  7月 21 18:11 pcmC0D0p
+  crw-rw----+ 1 root audio 116,  5  7月 20 11:11 pcmC0D1c
+  crw-rw----+ 1 root audio 116,  1  7月 20 11:11 seq
+  crw-rw----+ 1 root audio 116, 33  7月 20 11:11 timer
+  ```
+
+**`/proc` Interface**
+
+  ```
+  $ ls -l /proc/asound
+  total 0
+  dr-xr-xr-x 6 root root 0  7月 23 21:56 card0
+  -r--r--r-- 1 root root 0  7月 23 21:56 cards
+  -r--r--r-- 1 root root 0  7月 23 21:56 devices
+  lrwxrwxrwx 1 root root 5  7月 23 21:56 I82801AAICH -> card0
+  -r--r--r-- 1 root root 0  7月 23 21:56 modules
+  dr-xr-xr-x 2 root root 0  7月 23 21:56 oss
+  -r--r--r-- 1 root root 0  7月 23 21:56 pcm
+  dr-xr-xr-x 2 root root 0  7月 23 21:56 seq
+  -r--r--r-- 1 root root 0  7月 23 21:56 timers
+  -r--r--r-- 1 root root 0  7月 23 21:56 version
+  ```
+
 #### ALSA SoC Layer
 
 The overall project goal of the ALSA System on Chip (ASoC) layer is to provide better ALSA support for embedded system on chip procesors (e.g. pxa2xx, au1x00, iMX, etc) and portable audio codecs. Currently there is some support in the kernel for SoC audio, however it has some limitations.
