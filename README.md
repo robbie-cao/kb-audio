@@ -49,6 +49,10 @@ MAD has the following special features:
 - JACK
 - PulseAudio
 
+![Audio Layer in Linux](http://tuxradar.com/files/LXF130.audio.layers.png)
+
+> http://tuxradar.com/content/how-it-works-linux-audio-explained
+
 ![Linux Audio Architecutre](http://thewelltemperedcomputer.com/Linux/Pic/DiagramAlsa.jpg)
 
 > http://thewelltemperedcomputer.com/Linux/AudioArchitecture.htm
@@ -145,6 +149,8 @@ The ALSA utils are a collection of small and often extremely powerful applicatio
 - The `amixer` application is a command line app which allows adjustments to be made to a devices volume and sound controls.
 - The `acconnect` and `aseqview` applications are for making MIDI connections and viewing the list of connected ports.
 - The `aplay` and `arecord` applications are for commandline playback and recording of a number of file types including raw, wave and aiff at all the sample rates, bitdepths and channel counts known to the ALSA library.
+
+> http://www.alsa-project.org/main/index.php/ALSA_User_Info
 
 #### ALSA SoC Layer
 
