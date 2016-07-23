@@ -120,6 +120,10 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
   -r--r--r-- 1 root root 0  7月 23 21:56 version
   ```
 
+![Create ALSA device files by hand](images/alsa_proc_dev.png)
+
+> http://free-electrons.com/doc/embedded_linux_audio.pdf
+
 #### ALSA SoC Layer
 
 The overall project goal of the ALSA System on Chip (ASoC) layer is to provide better ALSA support for embedded system on chip procesors (e.g. pxa2xx, au1x00, iMX, etc) and portable audio codecs. Currently there is some support in the kernel for SoC audio, however it has some limitations.
