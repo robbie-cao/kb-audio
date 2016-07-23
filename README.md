@@ -89,7 +89,7 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 
 #### ALSA Interface
 
-**Device Files in `/dev/snd/`
+**`/dev/snd/`**
 
   ```
   $ ls -l /dev/snd
@@ -103,7 +103,7 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
   crw-rw----+ 1 root audio 116, 33  7月 20 11:11 timer
   ```
 
-**`/proc` Interface**
+**`/proc/asound/`**
 
   ```
   $ ls -l /proc/asound
@@ -119,6 +119,19 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
   -r--r--r-- 1 root root 0  7月 23 21:56 timers
   -r--r--r-- 1 root root 0  7月 23 21:56 version
   ```
+
+- `/proc/asound/cards`
+  List of available sound cards
+- `/proc/asound/devices`
+  List of card devices
+- `/proc/asound/card<i>/id`
+  Card identifier
+- `/proc/asound/card<i>/pcm[c|p]<j>/info`
+  Information about a capture (c) or playback (p) PCM device
+- `/proc/asound/modules`
+- `/proc/asound/version
+  ALSA version
+
 
 ![Create ALSA device files by hand](images/alsa_proc_dev.png)
 
