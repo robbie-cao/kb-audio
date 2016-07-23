@@ -61,6 +61,8 @@ MAD has the following special features:
 
 ![Linux Auido Components and Relationship](http://1.bp.blogspot.com/-jLXOZF_0txQ/T6K3HZ_3JII/AAAAAAAABrw/y-4zbxrWw-E/s1600/linux_audio.png)
 
+> http://free-electrons.com/doc/embedded_linux_audio.pdf
+
 ### Android Audio Subsystem
 
 ![Android Audio Subsystem](http://processors.wiki.ti.com/images/1/18/Audio_Stack.jpg)
