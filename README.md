@@ -113,6 +113,30 @@ To achieve all this, ASoC basically splits an embedded audio system into 3 compo
 
 > http://askubuntu.com/questions/581128/what-is-the-relation-between-alsa-and-pulseaudio-sound-architecture
 
+PulseAudio runs a sound server, a background process accepting sound input from one or more sources (processes or capture devices) and redirecting it to one or more sinks (sound cards, remote network PulseAudio servers, or other processes).
+
+One of the goals of PulseAudio is to reroute all sound streams through it, including those from processes that attempt to directly access the hardware (like legacy OSS applications). PulseAudio achieves this by providing adapters to applications using other audio systems, like aRts and ESD.
+
+The main PulseAudio features include:
+
+- Per-application volume controls.
+- An extensible plugin architecture with support for loadable modules.
+- Compatibility with many popular audio applications.
+- Support for multiple audio sources and sinks.
+- Low latency operation and latency measurement.
+- A zero-copy memory architecture for processor resource efficiency.
+- Ability to discover other computers using PulseAudio on the local network and play sound through their speakers directly.
+- Ability to change which output device an application plays sound through while the application is playing sound (without the application needing to support this, and indeed without even being aware that this happened).
+- A command-line interface with scripting capabilities.
+- A sound daemon with command line reconfiguration capabilities.
+- Built-in sample conversion and resampling capabilities.
+- The ability to combine multiple sound cards into one.
+- The ability to synchronize multiple playback streams.
+- Bluetooth audio devices with dynamic detection.
+- The ability to enable system wide equalization.
+
+> https://en.wikipedia.org/wiki/PulseAudio
+
 ## Software
 
 ### `arecord`
