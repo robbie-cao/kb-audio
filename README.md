@@ -129,13 +129,21 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 - `/proc/asound/card<i>/pcm[c|p]<j>/info`
   Information about a capture (c) or playback (p) PCM device
 - `/proc/asound/modules`
-- `/proc/asound/version
+- `/proc/asound/version`
   ALSA version
-
 
 ![Create ALSA device files by hand](images/alsa_proc_dev.png)
 
 > http://free-electrons.com/doc/embedded_linux_audio.pdf
+
+#### ALSA Utilities
+
+**`alsamixer`**
+**`alsactl`**
+**`alsaplayer`**
+**`aplay`**
+**`arecord`**
+**`amixer`**
 
 #### ALSA SoC Layer
 
