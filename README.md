@@ -138,12 +138,13 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 
 #### ALSA Utilities
 
-**`alsamixer`**
-**`alsactl`**
-**`alsaplayer`**
-**`aplay`**
-**`arecord`**
-**`amixer`**
+The ALSA utils are a collection of small and often extremely powerful applications designed to allow users to control the various parts of the ALSA system.
+
+- The `alsactl` application is a way to save settings for your device.
+- The `alsamixer` application is an ncurses version of `amixer`.
+- The `amixer` application is a command line app which allows adjustments to be made to a devices volume and sound controls.
+- The `acconnect` and `aseqview` applications are for making MIDI connections and viewing the list of connected ports.
+- The `aplay` and `arecord` applications are for commandline playback and recording of a number of file types including raw, wave and aiff at all the sample rates, bitdepths and channel counts known to the ALSA library.
 
 #### ALSA SoC Layer
 
