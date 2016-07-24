@@ -569,6 +569,41 @@ amplitude and samplerate you like, optionally with a finite duration.
 
 > http://askubuntu.com/questions/789465/generate-white-noise-to-calm-a-baby
 
+## Hardware
+
+### I2S
+
+**I2S**, also known as **Inter-IC Sound**, **Integrated Interchip Sound**, or **IIS**, is an electrical serial
+bus interface standard used for connecting digital audio devices together. It is used to communicate PCM audio
+data between integrated circuits in an electronic device.
+
+The bus consists of at least three lines:
+
+- Bit clock line (SCK)
+- Word clock line - also called word select (WS) or left right clock (LRCLK)
+- At least one multiplexed data line (SD)
+
+It may also include the following lines:
+
+- Master clock (typical 256 x LRCLK)
+- A multiplexed data line for upload
+
+> https://web.archive.org/web/20060702004954/http://www.semiconductors.philips.com/acrobat_download/various/I2SBUS.pdf
+
+![I2S Connection](http://m.eet.com/media/1167789/common_inter_ic_digital_interfaces_for_audio_data_transfer_fig3.jpg)
+
+The Philips standard for these signals uses the names WS for word select, SCK for the clock, and SD for the data,
+although IC manufacturers seem to rarely use these names in their IC datasheets. Word select is also commonly
+called LRCLK, for "left/right clock", and SCK may be called BCLK, for "bit clock" or SCLK for "serial clock".
+
+The name of an IC's serial data pin varies most from one IC vendor to another, and even within a single vendor's
+different products. A quick survey of audio IC datasheet shows that the SD signal may also be called SDATA, SDIN,
+SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the data pin is an input or output.
+
+> http://www.edn.com/design/consumer/4390981/Common-inter-IC-digital-interfaces-for-audio-data-transfer-
+
+> https://web.archive.org/web/20140223115501/http://www.eng.auburn.edu/~nelson/courses/elec5260_6260/Inter-IC%20Sound%20(I2S)%20Bus2.pdf
+
 ## Misc
 
 ### Color of Noise
