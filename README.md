@@ -610,6 +610,23 @@ SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the da
 
 > http://www.audio6.com/i2s/
 
+### Reference Solution
+
+**Audio Solution in Smartphone**
+
+![Cirrus Logic Audio Solution for Flagship Smartphone](http://www.cirrus.com/en/images/applications/static/APP17.png)
+
+**Voice Command Remote Control**
+
+![Cirrus Logic Audio Solution for Voice Command Remote Control](http://www.cirrus.com/en/images/applications/static/APP105.png)
+
+**Smart Home Automation**
+![Cirrus Logic Audio Solution for Smart Home Automation](http://www.cirrus.com/en/images/applications/static/APP104.png)
+
+> http://www.cirrus.com/en/applications/app/category/APPC3.html
+
+> http://www.cirrus.com/en/applications/app/category/APPC2.html
+
 ## Misc
 
 ### Color of Noise
