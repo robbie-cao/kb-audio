@@ -604,6 +604,12 @@ SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the da
 
 > https://web.archive.org/web/20140223115501/http://www.eng.auburn.edu/~nelson/courses/elec5260_6260/Inter-IC%20Sound%20(I2S)%20Bus2.pdf
 
+![I2S Timing](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/I2S_Timing.svg/605px-I2S_Timing.svg.png)
+
+![I2S Timing and Controller](http://audio6.qiniudn.com/wp-content/uploads/2014/04/e38b9e3b7440e23a7c5f1d6b28058ef3.gif)
+
+> http://www.audio6.com/i2s/
+
 ## Misc
 
 ### Color of Noise
