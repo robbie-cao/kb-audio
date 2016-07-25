@@ -140,6 +140,30 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 
 > http://free-electrons.com/doc/embedded_linux_audio.pdf
 
+#### ALSA Config
+
+The `alsa-lib` package provides the `/usr/share/alsa/alsa.conf` file as the main entry point.
+That file is responsible for including the full list of potential .asoundrc-format-type files on the system.
+
+The asoundrc file is typically installed in a user's home directory
+  ```
+  $HOME/.asoundrc
+  ```
+and is called from
+  ```
+  /usr/share/alsa/alsa.conf
+  ```
+It is also possible to install a system wide configuration file as
+  ```
+  /etc/asound.conf
+  ```
+
+More details refer to [Global view of ALSA config file framework, executive summary](http://www.alsa-project.org/main/index.php/Asoundrc#Global_view_of_ALSA_config_file_framework.2C_executive_summary)
+
+> http://www.alsa-project.org/main/index.php/Asoundrc
+
+> http://www.volkerschatz.com/noise/alsa.html
+
 #### ALSA Utilities
 
 The ALSA utils are a collection of small and often extremely powerful applications designed to allow users to control the various parts of the ALSA system.
