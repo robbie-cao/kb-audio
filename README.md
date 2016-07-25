@@ -732,6 +732,36 @@ In audio engineering, electronics, physics, and many other fields, the color of 
 
 > https://en.wikipedia.org/wiki/Colors_of_noise
 
+### Mixing
+
+**Hardware Mixing**
+
+"Hardware mixing" is a feature that some soundcards support that allows the card
+to receive multiple audio streams and play them all at the same time. This is
+done entirely in hardware, and does not adversely affect system performance.
+
+> http://www.alsa-project.org/~jfulmer/alsa-faq.html
+
+Most discrete sound cards support hardware mixing, which is enabled by default
+if available. Integrated motherboard sound cards (such as Intel HD Audio), usually
+do not support hardware mixing. On such cards, software mixing is done by an ALSA
+plugin called `dmix`. This feature is enabled automatically if hardware mixing is unavailable.
+
+> https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture
+
+**Software Mixing**
+
+"Software mixing" is the ability to play multiple sound files or applications
+at the same time through the same device.
+
+There are many ways to have software mixing in the Linux environment.
+Usually it requires a server application such as ARTSD, ESD, JACK...
+The list is large and the apps can often be confusing to use.
+
+> http://www.alsa-project.org/main/index.php/Asoundrc#Software_mixing
+
+> https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture
+
 ## Reference
 - https://jan.newmarch.name/LinuxSound/index.html
 - http://www.embeddedlinux.org.cn/essentiallinuxdevicedrivers/
