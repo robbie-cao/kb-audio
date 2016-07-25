@@ -164,6 +164,40 @@ More details refer to [Global view of ALSA config file framework, executive summ
 
 > http://www.volkerschatz.com/noise/alsa.html
 
+#### ALSA Concepts
+
+**Hardware - Parameters - Devices and Plugins**
+
+**Sound cards and hardware devices**
+
+ALSA arranges hardware audio devices and their components into a hierarchy of cards, devices and subdevices. It reflects the structure and capabilities of your hardware as seen by ALSA. If there is a discrepancy between a sound card's device structure and its documentation, this may be due to the driver not supporting all its features.
+
+ALSA **cards** correspond one-to-one to hardware sound cards. They do not play a big part except that one can list the devices on each card. A card can be denoted by its ID (a string) or a numerical index starting at zero.
+
+Most of ALSA's hardware access happens at the **device** level. The devices of each card are enumerated starting from zero. Different devices can be opened and used independently of each other. Typically, specifying a sound card and device will be sufficient to determine on which connector or set of connectors your audio signal will come out, or from which it is read.
+
+**Subdevices** are the most fine-grained objects ALSA can distinguish. The most frequently encountered cases are that a device has a separate subdevice for each channel or that there is only one subdevice altogether. A device's subdevices can in principle be used independently, but playing a multi-channel signal to a subdevice will use (and block) the following subdevice(s) too. Like devices, subdevices are identified by a zero-based index.
+
+**PCM parameters and the configuration space**
+
+Digitised sound has a number of parameters such as the sampling rate, the number of channels and the format in which sample values are stored. If you have been programming OSS, you may be used to setting these parameters one after the other before playing a sound file. So what is that talk about a "configuration space" which one finds in the ALSA documentation?
+
+The answer is that in reality things are not so simple: Some sound cards cannot combine all sample formats with all sampling rates or channel counts, for example. So the parameters are not independent. ALSA accounts for this fact by arranging sets of parameters in an n-dimensional space, the configuration space. One of these dimensions corresponds to the sampling rate, one to the sample format, and so on. If the parameters of one specific sound card are all independent, all legal configurations lie in one big n-dimensional box. In this case, one could describe them by giving separate ranges for all parameters. If the parameters are not independent, the set of allowed configurations is more complicated, and could not be expressed so simply.
+
+When a hardware device is accessed with ALSA, parameters are not fixed independently of each other. Rather, the legal configuration space for a device is narrowed down successively by restricting specific parameters. This makes it possible, for instance, to set a minimal rather than exact sampling rate. It also potentially leads to the problem that it depends on the order in which the parameters are set which parameter set you end up with (see below). That said, an ALSA plugin is available which automatically chooses the most sensible hardware parameters and performs format conversion as needed. This and other plugins are described in the following section.
+
+**ALSA devices and plugins**
+
+To avoid confusion later on, a few brief notes on ALSA devices are in order. These are quite different from the hardware devices introduced above. ALSA devices are denoted by strings. They are defined in one of ALSA's configuration files (see below) and are basically wrappers for plugins.
+
+It is no great exaggeration to say that ALSA consists almost entirely of plugins. Whenever a player or other program uses an ALSA device, plugins do the dirty work.
+
+PCM plugins extends functionality and features of PCM devices. The plugins take care about various sample conversions, sample copying among channels and so on.
+
+> http://www.volkerschatz.com/noise/alsa.html
+
+> http://www.alsa-project.org/alsa-doc/alsa-lib/pcm_plugins.html
+
 #### ALSA Utilities
 
 The ALSA utils are a collection of small and often extremely powerful applications designed to allow users to control the various parts of the ALSA system.
