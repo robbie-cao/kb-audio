@@ -571,6 +571,33 @@ amplitude and samplerate you like, optionally with a finite duration.
 
 ## Hardware
 
+### Interface
+
+**Analogue**
+
+![Audio Interface](http://blog.dubspot.com/files/2011/06/komplete_audio_6_web_setups-02.jpg)
+
+> https://en.wikipedia.org/wiki/Audio_and_video_interfaces_and_connectors
+
+> http://blog.dubspot.com/audio-interface-breakdown-apogee-duet-2-native-instruments-komplete-audio-6/
+
+> http://blog.dubspot.com/understanding-audio-interfaces/
+
+**Digital**
+
+- AC'97 (Audio Codec 1997) interface between integrated circuits on PC motherboards
+- Intel High Definition Audio - modern replacement for AC'97
+- S/PDIF - either over coaxial cable or TOSLINK, common in consumer audio equipment and derived from AES3
+- I2S (Inter-IC sound) interface between integrated circuits in consumer electronics
+- MIDI - low-bandwidth interconnect for carrying instrument data; cannot carry sound but can carry digital sample data in non-realtime
+- MADI (Multichannel Audio Digital Interface)
+- ADAT interface
+- AES3 interface with XLR connectors, common in professional audio equipment
+- AES47 - professional AES3-style digital audio over Asynchronous Transfer Mode networks
+- TDIF, TASCAM proprietary format with D-sub cable
+- A2DP via Bluetooth
+
+
 ### I2S
 
 **I2S**, also known as **Inter-IC Sound**, **Integrated Interchip Sound**, or **IIS**, is an electrical serial
