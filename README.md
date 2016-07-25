@@ -641,6 +641,30 @@ SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the da
 
 ![Codec IC AK4951](images/codec_ic_ak4951.png)
 
+**Single-Chip MP3 Decoder - AT83SND2CMP3A1**
+
+![Codec IC AT83SND2CMP3A1](images/codec_ic_at83snd2cmp3.png)
+
+**Single-Chip Versatile Decoder - VS1053**
+
+VS1053 is a versatile "MP3 decoder chip" belonging to VLSI Solution's extensive slave audio processor family.
+
+Decodes multiple formats:
+- Ogg Vorbis
+- MP3 = MPEG 1 & 2 audio layer III (CBR+VBR+ABR)
+- MP1 & MP2 = MPEG 1 & 2 audio layers I & II optional
+- MPEG4 / 2 AAC-LC(+PNS), HE-AAC v2 (Level 3) (SBR + PS)
+- WMA4.0/4.1/7/8/9 all profiles (5-384 kbps)
+- FLAC lossless audio with software plugin (upto 24 bits, 48 kHz)
+- WAV (PCM + IMA ADPCM)
+- General MIDI 1 / SP-MIDI format 0
+
+Encodes three different formats from mic/line in mono or stereo:
+- Ogg Vorbis with software plugin
+- IMA ADPCM
+- 16-bit PCM
+
+![Codec IC VS1053](images/codec_ic_vs1053.png)
 
 ## Misc
 
