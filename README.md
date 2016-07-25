@@ -664,7 +664,7 @@ Encodes three different formats from mic/line in mono or stereo:
 - IMA ADPCM
 - 16-bit PCM
 
-![Codec IC VS1053](images/codec_ic_vs1053.png)
+![Codec IC VS1053](images/codec_ic_vs1053b.png)
 
 ## Misc
 
