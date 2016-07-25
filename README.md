@@ -633,17 +633,31 @@ SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the da
 
 ![Codec IC WM8960](images/codec_ic_wm8960.png)
 
+> https://www.cirrus.com/en/pubs/proDatasheet/WM8960_v4.2.pdf
+
 **TLV320**
 
 ![Codec IC TLV320](images/codec_ic_tlv320.png)
+
+> http://www.ti.com/product/tlv320aic3101/description
+
+> http://www.ti.com.cn/cn/lit/ds/symlink/tlv320aic31.pdf
 
 **AK4951**
 
 ![Codec IC AK4951](images/codec_ic_ak4951.png)
 
+> https://www.akm.com/akm/en/file/datasheet/AK4951EN.pdf
+
 **Single-Chip MP3 Decoder - AT83SND2CMP3A1**
 
 ![Codec IC AT83SND2CMP3A1](images/codec_ic_at83snd2cmp3.png)
+
+> https://www.pjrc.com/mp3/sta013.html
+
+> http://www.atmel.com/Images/doc7524.pdf
+
+> http://www.atmel.com/Images/doc7525.pdf
 
 **Single-Chip Versatile Decoder - VS1053**
 
@@ -665,6 +679,15 @@ Encodes three different formats from mic/line in mono or stereo:
 - 16-bit PCM
 
 ![Codec IC VS1053](images/codec_ic_vs1053b.png)
+
+> http://www.vlsi.fi/en/products/vs1053.html
+
+**More Single-Chip MP3/.. Encoder and Decoder**
+
+- http://www.vlsi.fi/en/products.html
+- http://www.nxp.com/documents/data_sheet/SAF784X.pdf
+- http://rohmfs.rohm.com/en/products/databook/datasheet/ic/audio_video/audio_processor/bu94601kv-e.pdf
+- http://www.keil.com/dd/docs/datashts/atmel/at85c51snd3.pdf
 
 ## Misc
 
