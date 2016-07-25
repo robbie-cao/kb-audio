@@ -597,6 +597,7 @@ amplitude and samplerate you like, optionally with a finite duration.
 - TDIF, TASCAM proprietary format with D-sub cable
 - A2DP via Bluetooth
 
+> https://en.wikipedia.org/wiki/Digital_audio#Digital_audio_interfaces
 
 ### I2S
 
