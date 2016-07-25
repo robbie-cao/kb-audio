@@ -627,6 +627,21 @@ SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the da
 
 > http://www.cirrus.com/en/applications/app/category/APPC2.html
 
+### Codec IC Sample
+
+**WM8960**
+
+![Codec IC WM8960](images/codec_ic_wm8960.png)
+
+**TLV320**
+
+![Codec IC TLV320](images/codec_ic_tlv320.png)
+
+**AK4951**
+
+![Codec IC AK4951](images/codec_ic_ak4951.png)
+
+
 ## Misc
 
 ### Color of Noise
