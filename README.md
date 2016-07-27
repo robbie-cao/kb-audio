@@ -713,6 +713,32 @@ SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the da
 
 > http://www.cirrus.com/en/applications/app/category/APPC2.html
 
+### I2S vs PCM vs AC97
+
+I2S is a common 4 wire DAI used in HiFi, STB and portable devices. The Tx and
+Rx lines are used for audio transmission, whilst the bit clock (BCLK) and
+left/right clock (LRC) synchronise the link.
+
+![I2S Interface](http://www.interfacebus.com/I2S-interface-output-serial-data-transfer-format.jpg)
+
+PCM is another 4 wire interface, very similar to I2S, which can support a more
+flexible protocol. It has bit clock (BCLK) and sync (SYNC) lines that are used
+to synchronise the link whilst the Tx and Rx lines are used to transmit and
+receive the audio data. Bit clock usually varies depending on sample rate
+whilst sync runs at the sample rate. PCM also supports Time Division
+Multiplexing (TDM) in that several devices can use the bus simultaneously (this
+is sometimes referred to as network mode).
+
+![PCM Interface](https://www.maximintegrated.com/en/images/appnotes/376/376Fig02.gif)
+
+AC97 is a five wire interface commonly found on many PC sound cards.
+
+![AC97 Interface](https://jreeblog.files.wordpress.com/2012/02/screen-shot-2012-02-16-at-8-41-18-pm.png?w=449&h=160)
+
+> https://www.kernel.org/doc/Documentation/sound/alsa/soc/DAI.txt
+
+> http://prog3.com/sbdm/blog/xushx_bigbear/article/details/48802875
+
 ### Codec IC Sample
 
 **WM8960**
