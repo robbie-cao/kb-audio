@@ -28,7 +28,7 @@ MAD has the following special features:
 
 ### Linux Sound Subsystem
 
-![Linux Sound Subsystem](images/linux_sound_subsystem.jpeg)
+![Linux Sound Subsystem](images/linux_sound_subsystem.jpg)
 
 > http://www.embeddedlinux.org.cn/essentiallinuxdevicedrivers/final/images/ZTVyMWQ5OHB0Z2lzMC8vbWMzNWE5NC9yMzZnMjdhZ3AuaWNzaTAxLzNmM2hpZ2Y-.jpg
 
