@@ -664,6 +664,69 @@ amplitude and samplerate you like, optionally with a finite duration.
 
 > http://askubuntu.com/questions/789465/generate-white-noise-to-calm-a-baby
 
+### Tips
+
+To list the available sound cards and PCMs for playback:
+
+```
+aplay -l
+```
+
+To list the available sound cards and PCMs for capture:
+
+```
+arecord -l
+```
+
+In most cases `-Dplughw:0,0` is the device we want to use for audio but in case we have several audio devices (onboard + USB for example) one need to specify which device to use for audio: `-Dplughw:omap5uevm,0` will use the onboard audio on OMAP5-uEVM board.
+
+To play audio on card0's PCM0 and let ALSA to decide if resampling is needed:
+
+```
+aplay -Dplughw:0,0 <path to wav file>
+```
+
+To record audio to a file:
+
+```
+arecord -Dplughw:0,0 -t wav <path to wav file>
+```
+
+To test full duplex audio (play back the recorded audio w/o intermediate file):
+
+```
+arecord -Dplughw:0,0 | aplay -Dplughw:0,0
+```
+
+To request specific format to be used for playback/capture take a look at the help of aplay/arecord and specify the format with `-f -r -c` and open the hw device not the plughw `-Dhw:0,0`
+
+For example, record 48KHz, stereo 16bit audio:
+
+```
+arecord -Dhw:0,0 -fdat -t wav record_48K_stereo_16bit.wav
+```
+
+Or to record record 96KHz, stereo 24bit audio:
+
+```
+arecord -Dhw:0,0 -fS24_LE -c2 -r96000 -t wav record_96K_stereo_24bit.wav
+```
+
+It is a good practice to save the mixer settings found to be good and reload them after every boot (if your distribution is not doing this already)
+
+Set the mixers for the board with amixer, alsamixer
+```
+alsactl -f board.aconf store
+```
+
+After booting up the board it can be restored with a single command:
+
+```
+alsactl -f board.aconf restore
+```
+
+> http://processors.wiki.ti.com/index.php/Linux_Core_Audio_User's_Guide
+
 ## Hardware
 
 ### Interface
