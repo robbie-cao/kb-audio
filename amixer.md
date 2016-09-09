@@ -6,6 +6,10 @@
 
 **`amixer`** with no arguments will display the current mixer settings for the default soundcard and device. **This is a good way to see a list of the simple mixer controls you can use.**
 
+**`alsamixer`** is an ncurses mixer program for use with the  ALSA  soundcard drivers.
+
+![alsamixer](https://upload.wikimedia.org/wikipedia/commons/8/86/Alsamixer.png)
+
 ## Usage
 
 ```
@@ -293,3 +297,4 @@ A more detailed guide in Chinese: http://blog.csdn.net/yimiyangguang1314/article
 - http://linux.die.net/man/1/amixer
 - http://www.commandlinefu.com/commands/using/amixer
 - http://blog.csdn.net/yimiyangguang1314/article/details/7755815
+- http://linuxcommand.org/man_pages/alsamixer1.html
