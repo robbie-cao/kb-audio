@@ -293,7 +293,34 @@ To use `amixer` to configure ALSA soundcard driver, you need understand those pa
 
 A more detailed guide in Chinese: http://blog.csdn.net/yimiyangguang1314/article/details/7755815
 
+## Save Settings
+
+After configure soundcard with `amixer` or `alsamixer`, you can save settings with the following command:
+
+```
+$ sudo alsactl store
+```
+
+This should save alsamixer configurations to `/var/lib/alsa/asound.state` which gets loaded every startup.
+
+You could also save the mixer settings into a custom file with:
+
+```
+$ alsactl --file ~/.config/asound.state store
+```
+
+Reloading:
+
+```
+$ alsactl --file ~/.config/asound.state restore
+```
+
+> http://askubuntu.com/questions/50067/howto-save-alsamixer-settings
+
+> http://linux.die.net/man/1/alsactl
+
 ## Reference
+
 - http://linux.die.net/man/1/amixer
 - http://www.commandlinefu.com/commands/using/amixer
 - http://blog.csdn.net/yimiyangguang1314/article/details/7755815
