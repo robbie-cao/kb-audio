@@ -88,7 +88,7 @@ Examples
 
 > http://www.commandlinefu.com/commands/using/amixer
 
-## Tips
+## Steps
 
 To use `amixer` to configure ALSA soundcard driver, you need understand those parameters you are going to set. Simple steps as below:
 
@@ -96,14 +96,14 @@ To use `amixer` to configure ALSA soundcard driver, you need understand those pa
 
    Refer to [`amixer` usage](#usage).
 
-2. Check interfaces and contents (provided by the sound system on target) which you can control with `amixer scontrols`, `amixer scontents`, `amixer controls` and/or `amixer contengs`
+2. Check interfaces and contents (provided by the sound system on target) which you can control with `amixer scontrols` / `amixer scontents` or `amixer controls` / `amixer contengs`
 
    **It's important step as different board may provide different interface and contents to control.**
 
    Example:
 
    ```
-   $ amixer controls
+   # amixer controls
    numid=10,iface=MIXER,name='Headphone Playback ZC Switch'
    numid=9,iface=MIXER,name='Headphone Playback Volume'
    numid=15,iface=MIXER,name='PCM Playback -6dB Switch'
@@ -132,6 +132,7 @@ To use `amixer` to configure ALSA soundcard driver, you need understand those pa
    ---
 
    ```
+   # amixer contents
    numid=10,iface=MIXER,name='Headphone Playback ZC Switch'
      ; type=BOOLEAN,access=rw------,values=2
      : values=on,on
@@ -179,37 +180,112 @@ To use `amixer` to configure ALSA soundcard driver, you need understand those pa
    <...>
    ```
 
-3. Understand how to set parameters
+3. Understand controls, contents and parameters to be set
 
-   In summary, use *get* command to check interface/contents and then use *set* command to set the interface with proper parameters you want.
+   In summary, use `cget` / `sget` command to check interface/contents and then use `cset` / `sset` command to set the interface with proper parameters you want.
 
    Example:
 
-   If you want to set **'Line In Volume'** which display in `amixer controls` as below:
+   If you want to set **'Line In Volume'**:
 
-   ```
-   numid=5,iface=MIXER,name='Line In Volume'
-   ```
+   a) Get in *cID* with `amixer controls`:
 
-   Check the contents can be set for 'Line In Volume' with `amixer cget` as below:
+      ```
+      # amixer controls
+      numid=49,iface=MIXER,name='Headphone Mixer Aux Playback Volume'
+      numid=43,iface=MIXER,name='Headphone Mixer Beep Playback Volume'
+      numid=32,iface=MIXER,name='Headphone Playback ZC Switch'
+      numid=4,iface=MIXER,name='Headphone Playback Switch'
+      numid=3,iface=MIXER,name='Headphone Playback Volume'
+      numid=6,iface=MIXER,name='PCM Playback Volume'
+      numid=5,iface=MIXER,name='Line In Volume'        <-- interface to be set
+      <...>
+      ```
 
-   ```
-   $ ./amixer cget  numid=5,iface=MIXER,name='Line In Volume'
-   numid=5,iface=MIXER,name='Line In Volume'
-     ; type=INTEGER,access=rw---R--,values=2,min=0,max=31,step=0
-     : values=23,23
-     | dBscale-min=-34.50dB,step=1.50dB,mute=0
-   ```
+   b) Check the contents which can be set for 'Line In Volume' with `amixer cget`:
 
-   The result shows the volume setting is 0~31. If you want to set the volume to 25, command as below:
+      ```
+      # amixer cget numid=5,iface=MIXER,name='Line In Volume'
+      numid=5,iface=MIXER,name='Line In Volume'
+        ; type=INTEGER,access=rw---R--,values=2,min=0,max=31,step=0
+        : values=23,23
+        | dBscale-min=-34.50dB,step=1.50dB,mute=0
+      ```
 
-   ```
-   $ amixer cset  numid=5,iface=MIXER,name='Line In Volume'  25
-   numid=5,iface=MIXER,name='Line In Volume'
-     ; type=INTEGER,access=rw---R--,values=2,min=0,max=31,step=0
-     : values=25,25
-     | dBscale-min=-34.50dB,step=1.50dB,mute=0
-   ```
+   c) The result shows the volume setting is *0~31* and current setting is *23*. If you want to set the volume to *25*, command as below:
+
+      ```
+      # amixer cset numid=5,iface=MIXER,name='Line In Volume' 25
+      numid=5,iface=MIXER,name='Line In Volume'
+        ; type=INTEGER,access=rw---R--,values=2,min=0,max=31,step=0
+        : values=25,25
+        | dBscale-min=-34.50dB,step=1.50dB,mute=0
+      ```
+
+   Similarly, use `scontrols` / `scontents` and `sget` / `sset` command pairs for simple control. For example, to set volume for 'Headphone', steps as below:
+
+   a) Get in *sID* with `amixer scontrols`:
+
+      ```
+      # amixer scontrols
+      Simple mixer control 'Headphone',0           <-- interface to be set
+      Simple mixer control 'Headphone Playback ZC',0
+      Simple mixer control 'Speaker',0
+      Simple mixer control 'Speaker AC',0
+      Simple mixer control 'Speaker DC',0
+      Simple mixer control 'Speaker Playback ZC',0
+      Simple mixer control 'PCM Playback -6dB',0
+      Simple mixer control 'Mono Output Mixer Left',0
+      Simple mixer control 'Mono Output Mixer Right',0
+      Simple mixer control 'Playback',0
+      Simple mixer control 'Capture',0
+      Simple mixer control '3D',0
+      Simple mixer control '3D Filter Lower Cut-Off',0
+      Simple mixer control '3D Filter Upper Cut-Off',0
+      Simple mixer control 'ADC High Pass Filter',0
+      Simple mixer control 'ADC PCM',0
+      <...>
+      ```
+
+   b) Check the simple contents which can be set for 'Headphone' with `amixer sget`:
+
+      ```
+      # amixer sget 'Headphone',0
+      Simple mixer control 'Headphone',0
+      Capabilities: pvolume
+      Playback channels: Front Left - Front Right
+      Limits: Playback 0 - 127
+      Mono:
+      Front Left: Playback 127 [100%] [6.00dB]
+      Front Right: Playback 127 [100%] [6.00dB]
+      ```
+   c) Set volume with `amixer sset`:
+
+      ```
+      # amixer -c 0 sset Headphone,0 120
+      Simple mixer control 'Headphone',0
+      Capabilities: pvolume
+      Playback channels: Front Left - Front Right
+      Limits: Playback 0 - 127
+      Mono:
+      Front Left: Playback 120 [94%] [-1.00dB]
+      Front Right: Playback 120 [94%] [-1.00dB]
+      ```
+
+      -or-
+
+      ```
+      # amixer sset 'Headphone',0 80%
+      Simple mixer control 'Headphone',0
+      Capabilities: pvolume
+      Playback channels: Front Left - Front Right
+      Limits: Playback 0 - 127
+      Mono:
+      Front Left: Playback 102 [80%] [-19.00dB]
+      Front Right: Playback 102 [80%] [-19.00dB]
+      ```
+
+4. Well done!
 
 A more detailed guide in Chinese: http://blog.csdn.net/yimiyangguang1314/article/details/7755815
 
