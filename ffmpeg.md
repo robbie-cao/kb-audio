@@ -114,8 +114,67 @@ lame -r -s 22.05 -m m -b 64 voice.wav mic-input.mp3
 
 > http://www.pc-freak.net/blog/linux-record-audio-from-console-terminal-arecord-ffmpeg-recliving-2nd-3rd-world-country-blessing/
 
+### Encode mp3 with `ffmpeg` using `libmp3lame`
+
+```
+ffmpeg -i input.wav -codec:a libmp3lame -qscale:a 2 output.mp3
+```
+
+Control quality with -qscale:a (or the alias -q:a).
+
+> https://trac.ffmpeg.org/wiki/Encode/MP3
+
+### Grab the desktop (screen) with `ffmpeg`
+
+#### Linux
+
+Use the `x11grab` device:
+
+```
+ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 output.mp4
+```
+
+This will grab the image from desktop, starting with the upper-left corner at (x=100, y=200) with the width and height of 1024x768.
+
+If you need audio too you can use ALSA:
+
+```
+ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mkv
+```
+
+Or the `pulse` input device:
+
+```
+ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f pulse -ac 2 -i default output.mkv
+```
+
+#### OS X
+
+Use the `avfoundation` device:
+
+```
+ffmpeg -f avfoundation -list_devices true -i ""
+```
+
+This will enumerate all the available input devices including screens ready to be captured.
+
+Once you've figured out the device index corresponding to the screen to be captured use:
+
+```
+ffmpeg -f avfoundation -i "<screen device index>:<audio device index>" out.mov
+```
+
+This will capture the screen from `<screen device index>` and audio from `<audio device index>` into the output file out.mov.
+
+> https://trac.ffmpeg.org/wiki/Capture/Desktop
+
+### Streaming media with `ffserver`
+
+> https://trac.ffmpeg.org/wiki/ffserver
+
 ## Reference
 
 - https://en.wikipedia.org/wiki/FFmpeg
 - https://www.ffmpeg.org/documentation.html
+- https://trac.ffmpeg.org/wiki
 - https://trac.ffmpeg.org/wiki/Capture/ALSA
