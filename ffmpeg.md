@@ -62,7 +62,33 @@ The transcoding process in `ffmpeg` for each output can be described by the foll
 `ffmpeg` tries to keep them synchronized by tracking lowest timestamp on any active input stream.
 
 
-## Examples
+## Tips
+
+### Record sound from ALSA device with `ffmpeg`
+
+1. Issue the arecord -L command.
+2. Look for the plughw values which corresponds to your hardware. Please note that `plughw` represents a hardware which has been plugged into the computer.
+3. Crosscheck the values in /dev/snd/by-id directory.
+
+   When you unplug the webcam(s), the by-id sub directory will vanish from the `/dev/snd` directory.
+   This is an excellent test to confirm which plughw is an externally plugged in device.
+
+4. The sound device(s) ID listed there will be the same as or correspond to one of the values obtained from the `arecord -L` command.
+5. The command to use is `ffmpeg: -f alsa -i plughw`.
+6. Please note, do NOT enclose the `plughw` value in quotes.
+7. A working example for me was:
+
+   ```
+   ffmpeg -f alsa -i plughw:CARD=U0x46d0x821,DEV=0 -acodec libmp3lame -t 20 output.mp4
+   ```
+
+8. You may add the video portion to the above command by adding:
+
+   ```
+   -f video4linux2
+   ```
+
+> http://askubuntu.com/questions/167360/how-to-format-the-ffmpeg-command-to-record-sound-from-my-webcam
 
 ## Reference
 
