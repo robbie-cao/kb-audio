@@ -90,7 +90,32 @@ The transcoding process in `ffmpeg` for each output can be described by the foll
 
 > http://askubuntu.com/questions/167360/how-to-format-the-ffmpeg-command-to-record-sound-from-my-webcam
 
+### Live audio stream using `ffmpeg`
+
+```
+fmpeg -ac 1 -f alsa -i hw:0,0 -acodec libmp3lame -ab 32k -ac 1 -re -f rtp rtp://localhost:1234
+
+arecord -f cd -D plughw:1,0 | ffmpeg -i - -acodec libmp3lame -ab 32k -ac 1 -re -f rtp rtp://234.5.5.5:1234
+```
+
+> http://raspberrypi.stackexchange.com/questions/1466/live-audio-stream-using-ffmpeg
+
+### Record sound from microphone
+
+```
+# using alsa-util
+arecord -D plughw:0,0 -f S16_LE -c1 -r22050 -t raw | lame -r -s 22.05 -m m -b 64 - mic-input.mp3
+
+# using ffmpeg
+ffmpeg -f alsa -ac 2 -i pulse -acodec pcm_s16le -vcodec libx264 -vpre lossless_ultrafast -threads 0 -y voice.wav
+# convert wav to mp3 using lame
+lame -r -s 22.05 -m m -b 64 voice.wav mic-input.mp3
+```
+
+> http://www.pc-freak.net/blog/linux-record-audio-from-console-terminal-arecord-ffmpeg-recliving-2nd-3rd-world-country-blessing/
+
 ## Reference
 
 - https://en.wikipedia.org/wiki/FFmpeg
 - https://www.ffmpeg.org/documentation.html
+- https://trac.ffmpeg.org/wiki/Capture/ALSA
