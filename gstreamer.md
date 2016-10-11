@@ -22,6 +22,10 @@ GStreamer is a broader library, and can actually use FFmpeg plugins. For simple 
 
 > https://www.quora.com/Multimedia-Which-is-better-FFmpeg-or-GStreamer-Why
 
+![](http://processors.wiki.ti.com/images/7/7b/GstBuildDependancies.png)
+
+> http://processors.wiki.ti.com/index.php/ARM_Multimedia_Users_Guide
+
 ## Reference
 
 - https://en.wikipedia.org/wiki/GStreamer
