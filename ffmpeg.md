@@ -126,7 +126,7 @@ Control quality with -qscale:a (or the alias -q:a).
 
 ### Audio Format Conversions
 
-### WAV - Waveform Audio File Format
+#### WAV - Waveform Audio File Format
 
 - wav to mp3: `ffmpeg -i audio.wav -acodec libmp3lame audio.mp3`
 - wav to ogg: `ffmpeg -i audio.wav  -acodec libvorbis audio.ogg`
