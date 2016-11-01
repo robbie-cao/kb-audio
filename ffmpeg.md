@@ -124,6 +124,36 @@ Control quality with -qscale:a (or the alias -q:a).
 
 > https://trac.ffmpeg.org/wiki/Encode/MP3
 
+### Audio Format Conversions
+
+### WAV - Waveform Audio File Format
+
+- wav to mp3: `ffmpeg -i audio.wav -acodec libmp3lame audio.mp3`
+- wav to ogg: `ffmpeg -i audio.wav  -acodec libvorbis audio.ogg`
+- wav to aac: `ffmpeg -i audio.wav  -acodec libfaac audio.aac`
+- wav to ac3: `ffmpeg -i audio.wav -acodec ac3 audio.mp3`
+
+#### OGG - Free, open standard container
+
+- ogg to mp3: `ffmpeg -i audio.ogg -acodec libmp3lame audio.mp3`
+- ogg to wav: `ffmpeg -i audio.ogg audio.wav`
+- ogg to aac: `ffmpeg -i audio.ogg  -acodec libfaac audio.aac`
+- ogg to ac3: `ffmpeg -i audio.ogg -acodec ac3 audio.ac3`
+
+#### AC3 - Acoustic Coder 3
+- ac3 to mp3: `ffmpeg -i audio.ac3 -acodec libmp3lame audio.mp3`
+- ac3 to wav: `ffmpeg -i audio.ac3 audio.wav`
+- ac3 to aac: `ffmpeg -i audio.ac3  -acodec libfaac audio.aac`
+- ac3 to ogg: `ffmpeg -i audio.ac3 -acodec libvorbis audio.ogg`
+
+#### AAC - Advanced Audio Coding
+- aac to mp3: `ffmpeg -i audio.aac -acodec libmp3lame audio.mp3`
+- aac to wav: `ffmpeg -i audio.aac audio.wav`
+- aac to ac3: `ffmpeg -i audio.aac  -acodec ac3 audio.ac3`
+- aac to ogg: `ffmpeg -i audio.aac -libvorbis audio.ogg`
+
+> https://linuxconfig.org/ffmpeg-audio-format-conversions
+
 ### Grab the desktop (screen) with `ffmpeg`
 
 #### Linux
