@@ -154,6 +154,10 @@ Control quality with -qscale:a (or the alias -q:a).
 
 > https://linuxconfig.org/ffmpeg-audio-format-conversions
 
+### Manipulating Audio Channels
+
+> https://trac.ffmpeg.org/wiki/AudioChannelManipulation
+
 ### Grab the desktop (screen) with `ffmpeg`
 
 #### Linux
