@@ -49,13 +49,41 @@ Each instrument definition for a wavetable synthesizer consists of samples and s
 
 > http://www.qsound.com/technology/player-synthesizer.htm
 
+## DLS Format
+
+DLS (from Downloadable Sounds), is standardized file formats for digital musical instrument sound banks (collections of virtual musical instrument programs). The DLS standards also include detailed specifications for how MIDI protocol-controlled music synthesizers should render the instruments in a DLS file. As a result, some people consider DLS primarily a synthesizer specification and only secondarily a file format.
+
+
+The Downloadable Sounds Level 1 Architecture enables the author to completely define an instrument by combining a recorded waveform with articulation information. An instrument designed this way can be downloaded onto any hardware device that supports the standard and then played like any standard MIDI synthesizer.
+
+Together with MIDI, it delivers the following benefits:
+- A common playback experience, unlike GM.
+- An unlimited sound palette for both instruments and sound effects, unlike GM.
+- True audio interactivity, unlike digital audio.
+- MIDI storage compression, unlike digital audio.
+
+The DLS Level 1 synthesizer consists of the following basic elements for each voice:
+- A sampled sound source with loop points
+- Two 4-segment envelope generators characterized as ADSR (Attack-Decay-Sustain-Release)
+- One Low Frequency Oscillator (LFO) generators
+- Standardized response to MIDI controllers
+
+The DLS Level 2 synthesizer consists of the following basic elements for each voice:
+- A sampled sound source with loop and release
+- Two 6-segment envelope generators characterized as DAHDSR (Delay-Attack-Hold-Decay-Sustain-Release)
+- Two Low Frequency Oscillator (LFO) generators
+- A low pass filter with resonance and dynamic filter cutoff frequency
+- Standardized response to MIDI controllers
+
 ## Reference
 
 - https://en.wikipedia.org/wiki/Synthesizer
 - https://en.wikipedia.org/wiki/Software_synthesizer
 - https://en.wikipedia.org/wiki/Sample-based_synthesis
 - https://en.wikipedia.org/wiki/Wavetable_synthesis
+- https://en.wikipedia.org/wiki/DLS_format
 - https://www.sfu.ca/sonic-studio/handbook/Sound_Synthesis.html
 - http://www.acoustics.salford.ac.uk/acoustics_info/sound_synthesis/
 - http://www.qsound.com/technology/player-synthesizer.htm
 - http://www.docin.com/p-1042378707.html
+- http://www.nyu.edu/classes/bello/FMT_files/10_MIDI_soundcontrol.pdf
