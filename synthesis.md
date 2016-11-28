@@ -58,3 +58,4 @@ Each instrument definition for a wavetable synthesizer consists of samples and s
 - https://www.sfu.ca/sonic-studio/handbook/Sound_Synthesis.html
 - http://www.acoustics.salford.ac.uk/acoustics_info/sound_synthesis/
 - http://www.qsound.com/technology/player-synthesizer.htm
+- http://www.docin.com/p-1042378707.html
