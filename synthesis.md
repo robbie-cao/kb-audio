@@ -106,6 +106,66 @@ SoundFont banks can conform to standard sound sets such as General MIDI, or use 
 
 > https://en.wikipedia.org/wiki/SoundFont
 
+## Synthesizer Software
+
+### FluidSynth
+
+FluidSynth is a real-time software synthesizer based on the SoundFont 2 specifications and has reached widespread distribution.  FluidSynth itself does not have a graphical user interface, but due to its powerful API several applications utilize it and it has even found its way onto embedded systems and is used in some mobile apps.
+
+Features:
+
+- Cross platform (Linux, Mac OSX and Windows to name a few)
+- SoundFont 2 support
+- Realtime effect control using SoundFont 2.01 modulators
+- Playback of MIDI files
+- Shared library which can be used in other programs
+- Built in command line shell
+
+> http://www.fluidsynth.org
+
+> https://sourceforge.net/projects/fluidsynth/
+
+### TiMidity++
+
+TiMidity++ is a software synthesizer. It can play MIDI files by converting them into PCM waveform data; give it a MIDI data along with digital instrument data files, then it synthesizes them in real-time, and plays. It can not only play sounds, but also can save the generated waveforms into hard disks as various audio file formats.
+
+Features:
+
+- Plays MIDI files without any external MIDI instruments at all
+- Understands SMF, MOD, RCP/R36/G18/G36, MFI
+- Converts MIDI files into various audio file formats: .wav, .au, .aiff, .ogg and so on
+- Uses Gravis Ultrasound compatible patch files and/or SoundFonts as the voice data
+- Displays information about the music that is now playing
+- Various user interfaces: ncurses, gtk, Win32-GUI, and others
+- Plays remote MIDI files over the network
+- Plays MIDI files in archive files
+- Displays sound spectrogram for the playing music
+- Trace playing
+
+> http://timidity.sourceforge.net
+
+> https://en.wikipedia.org/wiki/TiMidity%2B%2B
+
+### Csound
+
+Csound is a sound and music synthesis system, providing facilities for composition and performance over a wide range of platforms. It is not restricted to any style of music, having been used for many years in at least classical, pop, techno, ambient.
+
+Csound can most accurately be described as a compiler. What is a compiler? A compiler is a software that takes textual instructions in the form of source code and converts them into object code. This object code then gets converted into some kind of executable binary in the form of a computer program. Csound works in more or less the same way, only its object code is a stream of numbers representing audio.
+
+> https://sourceforge.net/projects/csound
+
+> http://csound.github.io/
+
+### Nyquist
+
+Nyquist is a language for sound synthesis and music composition. Unlike score languages that tend to deal only with events, or signal processing languages that tend to deal only with signals and synthesis, Nyquist handles both in a single integrated system. Nyquist is also flexible and easy to use because it is based on an interactive Lisp interpreter.
+
+With Nyquist, you can design instruments by combining functions (much as you would using the orchestra languages of Music V, cmusic, or Csound). You can call upon these instruments and generate a sound just by typing a simple expression. You can combine simple expressions into complex ones to create a whole composition.
+
+> https://sourceforge.net/projects/nyquist
+
+> http://www.cs.cmu.edu/~rbd/doc/nyquist/
+
 ## Reference
 
 - https://en.wikipedia.org/wiki/Synthesizer
