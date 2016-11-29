@@ -90,6 +90,22 @@ The DLS Level 2 synthesizer consists of the following basic elements for each vo
 - A low pass filter with resonance and dynamic filter cutoff frequency
 - Standardized response to MIDI controllers
 
+> http://amei.or.jp/midistandardcommittee/Recommended_Practice/dls1v11b.pdf
+
+> http://amei.or.jp/midistandardcommittee/Recommended_Practice/dls2v10a.pdf
+
+## SoundFont
+
+SoundFont is a brand name that collectively refers to a file format and associated technology that uses sample-based synthesis to play MIDI files.
+
+MIDI files do not contain any sounds, only instructions to render them. To render such files, sample-based MIDI synthesizers use recordings of instruments and sounds stored in a file or ROM chip. SoundFont-compatible synthesizers allow users to use SoundFont banks with custom samples to render their music.
+
+A SoundFont bank contains base samples in PCM format (similar to WAV files) that are mapped to sections on a musical keyboard. A SoundFont bank also contains other music synthesis parameters such as loops, vibrato effect, and velocity-sensitive volume changing.
+
+SoundFont banks can conform to standard sound sets such as General MIDI, or use other wholly custom sound-set definitions.
+
+> https://en.wikipedia.org/wiki/SoundFont
+
 ## Reference
 
 - https://en.wikipedia.org/wiki/Synthesizer
@@ -98,8 +114,10 @@ The DLS Level 2 synthesizer consists of the following basic elements for each vo
 - https://en.wikipedia.org/wiki/Wavetable_synthesis
 - https://en.wikipedia.org/wiki/DLS_format
 - https://en.wikipedia.org/wiki/General_MIDI
+- https://en.wikipedia.org/wiki/SoundFont
 - https://www.sfu.ca/sonic-studio/handbook/Sound_Synthesis.html
 - http://www.acoustics.salford.ac.uk/acoustics_info/sound_synthesis/
 - http://www.qsound.com/technology/player-synthesizer.htm
 - http://www.docin.com/p-1042378707.html
 - http://www.nyu.edu/classes/bello/FMT_files/10_MIDI_soundcontrol.pdf
+- http://www.synthfont.com/sfspec24.pdf
