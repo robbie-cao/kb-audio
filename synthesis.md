@@ -27,13 +27,17 @@ Among the most popular waveform synthesis techniques are
 
 ## Wavetable Synthesis
 
-![](https://www.music.mcgill.ca/~gary/307/week4/img4.gif)
+![](http://synthesizeracademy.com/wp-content/uploads/wavetable-synthesis-wavetable.gif)
 
 Wavetable synthesis is a technique used in certain digital music synthesizers to produce natural tone-like sounds. The sound of an existing instrument (a single note) is sampled and parsed into a sequence of circular tables of samples or wavetables, each having one period or cycle per table. A set of wavetables with user specified harmonic content can also be generated mathematically. Upon playback, these wavetables are used to fetch samples (table-lookup) in the same manner as in a numerically-controlled oscillator to produce a waveform. However, in wavetable synthesis, the output waveform is not normally static and evolves slowly in time as one wavetable is mixed with another, creating a changing waveform. Looping occurs when the wavetable evolution is halted, slowed, or reversed in time.
 
+![](https://www.music.mcgill.ca/~gary/307/week4/img4.gif)
+
 Wavetable synthesizers imitate dynamic filters and other computationally expensive synthesis steps by rapidly playing successive wavetables (each with a different waveform stored therein) in sequence. If each waveform is a little duller (or brighter) than the previous, a moving filter effect can be imitated. As noted below, this creates an effect that is equivalent to additive synthesis, but with the restriction that all partials in the additive engine are harmonic (i.e. integer multiples of the fundamental frequency). Wavetable synthesis can also related to frequency modulation synthesis; using wavetables, however, significantly reduces the amount of hardware needed, since the sum of partials at each step of each partial's envelope (the part requiring the most compute power) has already been calculated, and all the CPU needs to do is interpolate between them. By contrast, a basic analog additive or FM synthesizer would need several discrete oscillators, envelope generators and volume controls per voice, and a digital version would require a very fast CPU (that wasn't available when the technology was first being developed), or special (and much more complex) hardware to do the math. For example, the Yamaha DX7 has 6 operators per voice, and 16 voice polyphony, so a total of 96 separate oscillator, EG, and VCA modules would be needed to build an equivalent modular synthesizer. This setup would take several equipment racks to hold. It would also only be useful as an additive synthesizer, since FM requires highly stable oscillators to work properly. (The DX7 actually uses phase modulation -- a sine-wave DCO behind a programmable digital delay line -- combined with two intermediate registers and a fast time division multiplexing system to compute each operator, thus reducing the number of DCOs needed per voice to 1.)
 
-This method differs from simple sample playback in that the output waveform is always generated in real time as the CPU processes the sequence of wavetables, and the data in each table normally represent one period or cycle of the waveform. The name "wavetable" as applied to soundcards and sample-playback synthesizers is a misnomer; see below for an in-depth discussion.jk
+This method differs from simple sample playback in that the output waveform is always generated in real time as the CPU processes the sequence of wavetables, and the data in each table normally represent one period or cycle of the waveform. The name "wavetable" as applied to soundcards and sample-playback synthesizers is a misnomer; see below for an in-depth discussion.
+
+![](images/wavetable.png)
 
 > http://en.wikiaudio.org/Wavetable_synthesis
 
@@ -83,12 +87,16 @@ The DLS Level 1 synthesizer consists of the following basic elements for each vo
 - One Low Frequency Oscillator (LFO) generators
 - Standardized response to MIDI controllers
 
+![](images/dls1.png)
+
 The DLS Level 2 synthesizer consists of the following basic elements for each voice:
 - A sampled sound source with loop and release
 - Two 6-segment envelope generators characterized as DAHDSR (Delay-Attack-Hold-Decay-Sustain-Release)
 - Two Low Frequency Oscillator (LFO) generators
 - A low pass filter with resonance and dynamic filter cutoff frequency
 - Standardized response to MIDI controllers
+
+![](images/dls1.png)
 
 > http://amei.or.jp/midistandardcommittee/Recommended_Practice/dls1v11b.pdf
 
@@ -165,6 +173,19 @@ With Nyquist, you can design instruments by combining functions (much as you wou
 > https://sourceforge.net/projects/nyquist
 
 > http://www.cs.cmu.edu/~rbd/doc/nyquist/
+
+## Misc
+
+### Attack Decay Sustain Release (ADSR) Envelope
+
+Sound synthesis techniques often employ an envelope generator that controls a sound's parameters at any point in its duration. Most often this is an (ADSR) envelope, which may be applied to overall amplitude control, filter frequency, etc. The envelope may be a discrete circuit or module, or implemented in software. The contour of an ADSR envelope is specified using four parameters:
+
+- **Attack time** is the time taken for initial run-up of level from nil to peak, beginning when the key is first pressed.
+- **Decay time** is the time taken for the subsequent run down from the attack level to the designated sustain level.
+- **Sustain level** is the level during the main sequence of the sound's duration, until the key is released.
+- **Release time** is the time taken for the level to decay from the sustain level to zero after the key is released.
+
+![](https://upload.wikimedia.org/wikipedia/commons/e/ea/ADSR_parameter.svg)
 
 ## Reference
 
