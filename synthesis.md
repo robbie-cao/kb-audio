@@ -49,6 +49,21 @@ Each instrument definition for a wavetable synthesizer consists of samples and s
 
 > http://www.qsound.com/technology/player-synthesizer.htm
 
+## General MIDI
+
+General MIDI or GM is a standardized specification for music synthesizers that respond to MIDI messages.
+
+GM imposes several requirements beyond the more abstract MIDI 1.0 specification. While MIDI 1.0 by itself provides a communications protocol which ensures that different instruments can interoperate at a fundamental level (e.g., that pressing keys on a MIDI keyboard will cause an attached MIDI sound module to play musical notes), GM goes further in two ways: it requires that all GM-compatible synthesizers meet a certain minimal set of features, such as being able to play at least 24 notes simultaneously (polyphony), and it attaches specific interpretations to many parameters and control messages which were left under-specified in the MIDI 1.0 spec, such as defining instrument sounds for each of the 128 possible program numbers.
+
+GM synthesizers are required to be able to:
+
+- Allow 24 voices to be active simultaneously (including at least 16 melodic and 8 percussive voices)
+- Respond to note velocity
+- Support all 16 channels simultaneously (with channel 10 reserved for percussion)
+- Support polyphony (multiple simultaneous notes) on each channel
+
+> https://en.wikipedia.org/wiki/General_MIDI
+
 ## DLS Format
 
 DLS (from Downloadable Sounds), is standardized file formats for digital musical instrument sound banks (collections of virtual musical instrument programs). The DLS standards also include detailed specifications for how MIDI protocol-controlled music synthesizers should render the instruments in a DLS file. As a result, some people consider DLS primarily a synthesizer specification and only secondarily a file format.
@@ -82,6 +97,7 @@ The DLS Level 2 synthesizer consists of the following basic elements for each vo
 - https://en.wikipedia.org/wiki/Sample-based_synthesis
 - https://en.wikipedia.org/wiki/Wavetable_synthesis
 - https://en.wikipedia.org/wiki/DLS_format
+- https://en.wikipedia.org/wiki/General_MIDI
 - https://www.sfu.ca/sonic-studio/handbook/Sound_Synthesis.html
 - http://www.acoustics.salford.ac.uk/acoustics_info/sound_synthesis/
 - http://www.qsound.com/technology/player-synthesizer.htm
