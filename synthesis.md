@@ -187,6 +187,10 @@ Sound synthesis techniques often employ an envelope generator that controls a so
 
 ![](https://upload.wikimedia.org/wikipedia/commons/e/ea/ADSR_parameter.svg)
 
+## Scripting with MIDI
+
+http://seandon4.tripod.com
+
 ## Reference
 
 - https://en.wikipedia.org/wiki/Synthesizer
