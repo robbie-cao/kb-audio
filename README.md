@@ -86,12 +86,6 @@ MAD has the following special features:
 - JACK
 - PulseAudio
 
-<!--
-![Audio Layer in Linux](images/Pulseaudio-diagram-1000px.svg.png)
-
-> https://ubuntuforums.org/showthread.php?t=1794581
--->
-
 ![Audio Layer in Linux](images/audio-layers.jpg)
 
 > http://tuxradar.com/content/how-it-works-linux-audio-explained
@@ -277,7 +271,11 @@ To achieve all this, ASoC basically splits an embedded audio system into 3 compo
 
 ### PulseAudio
 
-![PulseAudio and ALSA](http://i.stack.imgur.com/IJkHa.png)
+![Audio Layer in Linux](images/Pulseaudio-diagram-1000px.svg.png)
+
+> https://ubuntuforums.org/showthread.php?t=1794581
+
+[//]: <> ![PulseAudio and ALSA](http://i.stack.imgur.com/IJkHa.png)
 
 > http://askubuntu.com/questions/581128/what-is-the-relation-between-alsa-and-pulseaudio-sound-architecture
 
