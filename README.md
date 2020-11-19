@@ -106,7 +106,7 @@ MAD has the following special features:
 
 ### Android Audio Subsystem
 
-![Android Audio Subsystem](http://processors.wiki.ti.com/images/1/18/Audio_Stack.jpg)
+![Android Audio Subsystem](images/Android_Audio_Stack.jpg)
 
 > http://processors.wiki.ti.com/index.php/TI-Android-GingerBread-2.3.4-DevKit-2.1_PortingGuides#Audio
 
