@@ -788,7 +788,15 @@ It may also include the following lines:
 
 > https://web.archive.org/web/20060702004954/http://www.semiconductors.philips.com/acrobat_download/various/I2SBUS.pdf
 
-![I2S Connection](http://m.eet.com/media/1167789/common_inter_ic_digital_interfaces_for_audio_data_transfer_fig3.jpg)
+![I2S Connection](images/diginterf_i2s.jpg)
+
+> https://www.tnt-audio.com/clinica/diginterf2_e.html
+
+![I2S Connection](images/i2s-connection.png)
+
+> https://embeddeddesignblog.blogspot.com/2017/07/understanding-i2s-interface-part-1.html
+
+> http://m.eet.com/media/1167789/common_inter_ic_digital_interfaces_for_audio_data_transfer_fig3.jpg
 
 The Philips standard for these signals uses the names WS for word select, SCK for the clock, and SD for the data,
 although IC manufacturers seem to rarely use these names in their IC datasheets. Word select is also commonly
