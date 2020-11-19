@@ -86,13 +86,13 @@ MAD has the following special features:
 - JACK
 - PulseAudio
 
+<!--
 ![Audio Layer in Linux](images/Pulseaudio-diagram-1000px.svg.png)
 
 > https://ubuntuforums.org/showthread.php?t=1794581
-
-<!--
-![Audio Layer in Linux](http://tuxradar.com/files/LXF130.audio.layers.png)
 -->
+
+![Audio Layer in Linux](images/audio-layers.jpg)
 
 > http://tuxradar.com/content/how-it-works-linux-audio-explained
 
