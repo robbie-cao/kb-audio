@@ -275,7 +275,9 @@ To achieve all this, ASoC basically splits an embedded audio system into 3 compo
 
 > https://ubuntuforums.org/showthread.php?t=1794581
 
-[//]: <> ![PulseAudio and ALSA](http://i.stack.imgur.com/IJkHa.png)
+<!--
+![PulseAudio and ALSA](http://i.stack.imgur.com/IJkHa.png)
+-->
 
 > http://askubuntu.com/questions/581128/what-is-the-relation-between-alsa-and-pulseaudio-sound-architecture
 
