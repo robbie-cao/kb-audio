@@ -124,7 +124,7 @@ Advanced Linux Sound Architecture (ALSA) is a software framework and part of the
 
 #### ALSA Structure
 
-![Structure of ALSA](http://www.alsa-project.org/~tiwai/lk2k/archtect.gif)
+![ALSA Structure and Flow](images/alsa-structure-flow.gif)
 
 > http://www.alsa-project.org/~tiwai/lk2k/lk2k.html
 
