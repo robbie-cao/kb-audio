@@ -812,7 +812,9 @@ SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the da
 
 ![I2S Timing](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/I2S_Timing.svg/605px-I2S_Timing.svg.png)
 
+<!--
 ![I2S Timing and Controller](http://audio6.qiniudn.com/wp-content/uploads/2014/04/e38b9e3b7440e23a7c5f1d6b28058ef3.gif)
+-->
 
 > http://www.audio6.com/i2s/
 
@@ -827,6 +829,7 @@ SDOUT, DACDAT, ADCDAT, or other variations on these, depending on whether the da
 ![Cirrus Logic Audio Solution for Voice Command Remote Control](http://www.cirrus.com/en/images/applications/static/APP105.png)
 
 **Smart Home Automation**
+
 ![Cirrus Logic Audio Solution for Smart Home Automation](http://www.cirrus.com/en/images/applications/static/APP104.png)
 
 > http://www.cirrus.com/en/applications/app/category/APPC3.html
