@@ -269,7 +269,9 @@ To achieve all this, ASoC basically splits an embedded audio system into 3 compo
 >
 > http://www.alsa-project.org/main/index.php/ASoC
 
-![ASoC Sample AM/DM37x, OMAP35x](http://processors.wiki.ti.com/images/9/91/Asoc_architecture.png)
+![ASoC Sample AM/DM37x, OMAP35x](images/Asoc_architecture.png)
+
+> https://processors.wiki.ti.com/index.php?oldid=218088
 
 ### PulseAudio
 
