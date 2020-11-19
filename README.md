@@ -309,6 +309,10 @@ The main PulseAudio features include:
 
 ## Software
 
+![Flow of Audio in Linux](images/flow_linux_audio.jpeg)
+
+> https://medium.com/@YihuiXiong/record-play-audio-on-linux-8f59adf93710
+
 ### `arecord`
 
 Alias to `aplay -C`.
